@@ -34,4 +34,27 @@ router.post('/api/notes', async (req, res) => {
   }
 });
 
+// DELETE /api/notes/:id should delete a note with the given ID
+router.delete('/api/notes/:id', async (req, res) => {
+  try {
+    const noteId = req.params.id;
+    let userNotes = JSON.parse(await fs.readFile(dbPath, 'utf8'));
+
+    const noteIndex = userNotes.findIndex((note) => note.id === noteId);
+
+    if (noteIndex !== -1) {
+      // This removes the note from the array
+      userNotes.splice(noteIndex, 1);
+      // and then here we Write the updated array
+      await fs.writeFile(dbPath, JSON.stringify(userNotes));
+      res.json({ success: true, message: 'Note deleted' });
+    } else {
+      res.status(404).json({ success: false, message: 'Note not found' });
+    };
+  } catch (err) {
+    console.err('Error Deleting:', err);
+    res.status(500).send('Server Error');
+  };
+});
+
 module.exports = router;
