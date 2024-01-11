@@ -43,9 +43,17 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 ## ScreenShots
 
+Screenshot of notes that have been created and saved.
+![note taker screenshot](https://github.com/BenPalac1/Take-Note-Taker/assets/139652929/182e954f-1e2e-4608-9d6c-ed401ecba1ef)
 
 
 ## Video showing app functionality
+
+Video showing the app being loaded, a note being created and saved, the page being refreshed to confirm that it saves, and showing the delete button working correctly:
+
+
+https://github.com/BenPalac1/Take-Note-Taker/assets/139652929/e7a52313-b1ca-4b10-85e7-35e7614be558
+
 
 
 
